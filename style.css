@@ -269,7 +269,7 @@ body {
 #mouth:hover {
   background-color: #fe3;
   box-shadow: inset 0px 10px 30px 10px #000;
-  z-index: 3;
+  z-index: 1;
 }
 #mouth:active {
   background-color: #fe3;
@@ -362,7 +362,7 @@ body {
   width: 200px;
   height: 100px;
   background-color: #fff;
-  z-index: 2;
+  z-index: -2;
   top: 15%;
   bottom: 0;
   left: 0;
@@ -370,11 +370,24 @@ body {
   margin: auto;
   border-radius: 10px 10px 30px 30px;
   opacity: 0;
+  transition: 0.4s;
 }
 
 .mask:hover {
-  z-index: 0;
-  background-color: #777;
+  z-index: 2;
+
+  transform: scale(1.1);
+
+  box-shadow: 0 0px 20px 5px rgba(0, 0, 0, 0.3);
+}
+.mask:focus {
+  z-index: 2;
+}
+.mask:active {
+  z-index: 2;
+
+  transform: scale(1.1);
+  top: 30%;
 }
 .lines {
   position: absolute;
@@ -410,17 +423,22 @@ body {
 @keyframes cngMask1 {
   0% {
     opacity: 0;
+    z-index: -2;
   }
+
   100% {
     opacity: 1;
+    z-index: 3;
   }
 }
 @keyframes cngMask2 {
   0% {
     opacity: 1;
+    z-index: 3;
   }
   100% {
     opacity: 0;
+    z-index: -2;
   }
 }
 
