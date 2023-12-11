@@ -71,8 +71,10 @@
       const resultContainer = document.getElementById("result");
       const randomIndex = Math.floor(Math.random() * topics.length);
       const randomTopic = topics[randomIndex];
-      resultContainer.innerHTML = `<p><span style="font-size: 36px; color: #e74c3c;">${randomTopic}</span></p>`;
-      resultContainer.style.display = 'block';
+      if (randomTopic !== undefined) {
+        resultContainer.innerHTML = `<p><span style="font-size: 36px; color: #e74c3c;">${randomTopic}</span></p>`;
+        resultContainer.style.display = 'block';
+      }
     }
   </script>
 </body>
